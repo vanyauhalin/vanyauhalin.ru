@@ -1,6 +1,27 @@
 {
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "workspace/scripts/build.sh",
+    "serve": "workspace/scripts/serve.sh",
+    "pre-commit": "lint-staged"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "autoprefixer": "^10.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "esm": "^3.2.25",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rev": "^9.0.0",
+    "gulp-rev-rewrite": "^5.0.0",
+    "html-minifier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "postcss-csso": "^5.0.1",
+    "postcss-import": "^14.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recess-order": "^2.5.0"
   }
 }

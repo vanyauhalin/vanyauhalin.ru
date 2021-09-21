@@ -1,0 +1,4 @@
+!.eleventy.js
+!.lintstagedrc.js
+!.stylelintrc.js
+!gulpfile.esm.js
