@@ -1,0 +1,26 @@
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/Montserrat-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/SourceCodePro-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Source Code Pro', monospace;
+}
