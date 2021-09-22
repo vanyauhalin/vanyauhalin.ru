@@ -5,7 +5,7 @@ import csso from 'postcss-csso';
 import imp from 'postcss-import';
 import { FS_CONTENT, FS_PATHS } from '../constants/fs';
 
-export default () => (
+export const styles = () => (
   gulp.src(FS_CONTENT.SRC_ASSETS_STYLES_INDEX)
     .pipe(postcss([imp, autoprefixer, csso]))
     .pipe(gulp.dest(FS_PATHS.DIST_ASSETS_STYLES))

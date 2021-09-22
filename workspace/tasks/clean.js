@@ -1,10 +1,17 @@
 import fs from 'fs';
 import { FS_CONTENT, FS_DIRS } from '../constants/fs';
 
-export default async () => {
-  await Promise.all([
-    FS_CONTENT.ASSETS_MANIFEST,
-  ].map(async (path) => {
-    await fs.promises.unlink(`${process.cwd()}/${FS_DIRS.DIST}/${path}`);
-  }));
+export const cleanPrevious = async () => {
+  try {
+    await fs.promises.access(FS_DIRS.DIST);
+    await fs.promises.rm(FS_DIRS.DIST, {
+      recursive: true,
+    });
+
+    // eslint-disable-next-line no-empty
+  } finally {}
+};
+
+export const cleanResult = async () => {
+  await fs.promises.unlink(FS_CONTENT.DIST_ASSETS_MANIFEST);
 };

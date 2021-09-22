@@ -25,9 +25,7 @@ const hash = () => (
 );
 
 const replace = async () => {
-  const result = await fs.promises.readFile(
-    `${process.cwd()}/${FS_CONTENT.DIST_ASSETS_MANIFEST}`,
-  );
+  const result = await fs.promises.readFile(FS_CONTENT.DIST_ASSETS_MANIFEST);
   const manifest = JSON.stringify(JSON.parse(result));
 
   return (
@@ -37,4 +35,4 @@ const replace = async () => {
   );
 };
 
-export default gulp.series(hash, replace);
+export const cache = gulp.series(hash, replace);

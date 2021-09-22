@@ -1,13 +1,13 @@
 import gulp from 'gulp';
-import fonts from './fonts';
-import styles from './styles';
-import { FS_DIRS, FS_EXTENSIONS, FS_PATHS } from '../constants/fs';
+import { fonts } from './fonts';
+import { styles } from './styles';
+import { FS_CONTENT } from '../constants/fs';
 
-export default () => {
+export const watch = () => {
   [
-    [FS_DIRS.FONTS, `.${FS_EXTENSIONS.FONT}`, fonts],
-    [FS_DIRS.STYLES, `.${FS_EXTENSIONS.STYLE}`, styles],
-  ].forEach(([dir, ext, task]) => {
-    gulp.watch(`${FS_PATHS.SRC_ASSETS}/${dir}/**/*${ext}`, gulp.parallel(task));
+    [FS_CONTENT.SRC_ASSETS_FONTS, fonts],
+    [FS_CONTENT.SRC_ASSETS_DEEP_STYLES, styles],
+  ].forEach(([path, task]) => {
+    gulp.watch(path, gulp.parallel(task));
   });
 };

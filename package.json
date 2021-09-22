@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "workspace/scripts/build.sh",
-    "serve": "workspace/scripts/serve.sh",
+    "build": "gulp build",
+    "serve": "gulp serve",
     "pre-commit": "lint-staged"
   },
   "devDependencies": {
