@@ -21,6 +21,7 @@
     "lint-staged": "^11.1.2",
     "postcss-csso": "^5.0.1",
     "postcss-import": "^14.0.2",
+    "postcss-media-minmax": "^5.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-recess-order": "^2.5.0"
   }
