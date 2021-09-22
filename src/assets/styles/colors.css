@@ -1,0 +1,9 @@
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(223, 11%, 13%);
+
+  --color-text-primary: var(--color-black);
+  --color-text-inverted: var(--color-white);
+  --color-background-primary: var(--color-white);
+  --color-background-inverted: var(--color-black);
+}
