@@ -1,0 +1,26 @@
+.page {
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page__body {
+  display: grid;
+  grid-template:
+    'navigation header' min-content
+    'navigation main' 1fr / 160px minmax(320px, 640px);
+  column-gap: 16px;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 16px;
+  margin: 0 176px 0 0;
+}
+
+@media (width < 992px) {
+  .page__body {
+    margin-right: 0;
+  }
+}

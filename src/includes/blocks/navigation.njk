@@ -1,0 +1,71 @@
+{%
+  set navigation = [{
+    name: 'Об авторе',
+    url: '/about'
+  }, {
+    name: 'Статьи',
+    url: '/articles'
+  }, {
+    name: 'Заметки',
+    url: '/notes'
+  }]
+%}
+
+<nav class="navigation">
+  <div class="navigation__crown">
+    {% if page.url == '/' %}
+      {% set isHome = true %}
+    {% else %}
+      {% set isHome = false %}
+    {% endif %}
+
+    <a
+      {% if isHome %}
+        class="navigation__link navigation__link_active"
+      {% else %}
+        class="navigation__link"
+        href="/"
+      {% endif %}
+    >
+      vanyauhalin
+    </a>
+  </div>
+  <ul
+    class="navigation__tree"
+    role="list"
+  >
+    {% for item in navigation %}
+      {% if item.url and item.url == page.url %}
+        {% set isCurrent = true %}
+      {% else %}
+        {% set isCurrent = false %}
+      {% endif %}
+
+      {% if loop.index == loop.length %}
+        {% set isLast = true %}
+      {% else %}
+        {% set isLast = false %}
+      {% endif %}
+
+      <li class="navigation__branch">
+        <span class="navigation__symbol">
+          {% if isLast %}
+            └─ 
+          {% else %}
+            ├─ 
+          {% endif %}
+        </span>
+        <a
+          {% if isCurrent %}
+            class="navigation__link navigation__link_active"
+          {% else %}
+            class="navigation__link"
+            href="{{ item.url }}"
+          {% endif %}
+        >
+          {{ item.name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
