@@ -7,7 +7,7 @@ export const watch = () => {
   [
     [FS_CONTENT.SRC_ASSETS_FONTS, fonts],
     [FS_CONTENT.SRC_ASSETS_DEEP_STYLES, styles],
-  ].forEach(([path, task]) => {
-    gulp.watch(path, gulp.parallel(task));
+  ].forEach(([content, task]) => {
+    gulp.watch(content, gulp.parallel(task));
   });
 };
